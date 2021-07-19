@@ -5,6 +5,8 @@
 }
 body{
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    height: 100vh;
 }
 body .attribution{
     display: none;
@@ -14,12 +16,22 @@ body .attribution{
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 14px;
     font-weight: 400;
     height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    max-height: 800px;
+    margin: auto;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    height: 100%;
 }
 .container{
     display: flex;
@@ -110,8 +122,8 @@ body .attribution{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 180px;
-    padding: 15px 25px;
+    width: 160px;
+    padding: 7px 15px;
     border-radius: 10px;
     vertical-align: middle;
     position: absolute;
@@ -125,3 +137,53 @@ body .attribution{
     font-weight: 700;
 }
 /* ////space left section */
+/* responsive section */
+@media screen and (min-width: 375px) {
+    .page{
+        background-color: hsl(229, 57%, 11%);
+        background-image: url("../images/bg-desktop.png");
+        background-size: 100% 50%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    .container{
+        padding: 40px;
+    }
+    .container.space-left{
+        width: calc(100% - 20px);
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+    .space-left__bar--limits{
+        margin-bottom: 0px;
+    }
+    .space_left__advice{
+        top: 0%;
+        left: 100%;
+        transform: translate(-200px, -50%);
+    }
+    .space_left__advice::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -25px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 25px 40px 0;
+        border-color: transparent white transparent transparent;
+    }
+}
+@media screen and (min-width: 600px) {
+    .row{
+        height: 178px;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+        top:3%;
+    }
+    .container.space-left{
+        width: 500px;
+    }
+}
